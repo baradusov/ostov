@@ -33,6 +33,12 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   opacity: 0.8;
+  transition: all 250ms ease-in-out;
+}
+
+.main-logo:hover {
+  opacity: 1;
+  transition: all 250ms ease-in-out;
 }
 
 @media screen and (max-width: 900px) {
