@@ -12,6 +12,13 @@ body {
 
   font-family: Helvetica, serif;
   color: #FFFFFF;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .main-header {
@@ -20,9 +27,9 @@ body {
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
-  height: 15%;
+  margin-top: 25px;
   padding: 0 5%;
 }
 
@@ -30,12 +37,17 @@ body {
   font-family: Helvetica, serif;
   color: #FFFFFF;
   font-size: 30px;
+  line-height: 30px;
   font-weight: 900;
   text-transform: uppercase;
+  letter-spacing: 2px;
+
+  text-decoration: none;
 
   opacity: 0.8;
 
   transition: all 250ms ease-in-out;
+  cursor: default;
 }
 
 .main-logo:hover {
@@ -57,7 +69,7 @@ body {
 
   font-family: Helvetica, serif;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: lowercase;
 
   list-style: none;
@@ -68,6 +80,8 @@ body {
 }
 
 .main-nav-item a {
+  display: block;
+
   color: #FFFFFF;
   text-decoration: none;
 
@@ -76,12 +90,30 @@ body {
 }
 
 .main-nav-item a:hover {
-  text-decoration: underline;
-  text-decoration-skip: ink;
-
   opacity: 1;
+}
 
-  transition: all 250ms ease-in-out;
+.main-nav-item span {
+  position: relative;
+}
+
+.main-nav-item span::after {
+  content: "";
+
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+  background: #FFFFFF;
+
+  transition: all 200ms ease-in-out;
+}
+
+.main-nav-item:hover span::after {
+  width: 100%;
+  opacity: 1;
 }
 
 .slider {
@@ -145,9 +177,9 @@ body {
 
 .slide-title {
   position: absolute;
-  top: 40%;
+  top: calc(50% - 30px);
   left: 10%;
-  
+
   margin: 0;
 
   font-family: Helvetica, serif;
@@ -165,7 +197,7 @@ body {
 
 .slick-arrow {
   position: absolute;
-  top: calc(50% - 50px);
+  top: 50%;
   z-index: 1;
 
   border: none;
@@ -201,6 +233,68 @@ body {
   right: 1%;
 }
 
+/* О КОМПАНИИ */
+
+.about-header {
+  position: static;
+
+  margin-bottom: 100px;
+
+  color: #222222;
+}
+
+.about-header a {
+  color: #222222;
+}
+
+.about-header .main-logo {
+  cursor: pointer;
+}
+
+.about-header span:after {
+  background: #222222;
+}
+
+.about-container {
+  padding: 0 5%;
+}
+
+.about-container h1 {
+  margin: 0;
+  margin-bottom: 40px;
+  color: #222222;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: flex-start;
+
+  color: #222222;
+}
+
+.about-image {
+  width: 100%;
+  height: 400px;
+}
+
+.image-item {
+  width: 100%;
+  max-width: 600px;
+
+  box-shadow: 0px 0px 66px -10px rgba(0,0,0,0.75);
+}
+
+.about-content {
+  max-width: 50%;
+  margin-right: 50px;
+}
+
+.about-content p {
+  margin-top: 0;
+}
+
+/* ГЛАВНЫЙ ФУТЕР */
+
 .main-footer {
   position: absolute;
   bottom: 0;
@@ -215,6 +309,11 @@ body {
   color: #FFFFFF;
 
   opacity: 0.8;
+}
+
+.about-footer {
+  position: static;
+  color: #333333;
 }
 
 .footer-inner {
